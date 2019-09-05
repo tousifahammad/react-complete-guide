@@ -12,6 +12,18 @@ class App extends Component {
     ]
   }
 
+  swithNameHandler = () =>{
+    this.setState(
+      {
+        persons: [
+          { name: "Tousif Ahammad", age: "27" },
+          { name: "Shantanu Mondal", age: "37" },
+          { name: "Shohel Akhtar", age: "27" }
+        ]
+      }
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,6 +35,9 @@ class App extends Component {
         <Person name="Shohel" age="25" />
 
         <h2>Using props with state</h2>
+
+        <button onClick = {this.swithNameHandler}> Switch Name </button>
+
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age}> I am a developer </Person>
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
